@@ -1,0 +1,56 @@
+	(1)
+VARIABLES	ADR_USD
+	
+star_rating	68.41***
+	(0.670)
+8584.city_id	-138.2***
+	(2.161)
+9395.city_id	-173.5***
+	(1.639)
+16808.city_id	-30.74***
+	(1.769)
+17193.city_id	-172.3***
+	(2.277)
+2.accom_int	-61.92***
+	(11.06)
+3.accom_int	-154.0***
+	(7.627)
+4.accom_int	-79.34***
+	(6.988)
+5.accom_int	-60.92
+	(59.86)
+6.accom_int	25.21
+	(28.35)
+7.accom_int	-118.2***
+	(6.999)
+8.accom_int	-117.5***
+	(6.807)
+9.accom_int	-25.36
+	(59.84)
+10.accom_int	61.10***
+	(20.98)
+11.accom_int	106.8***
+	(25.26)
+12.accom_int	-79.71***
+	(7.167)
+13.accom_int	34.82***
+	(8.649)
+14.accom_int	-10.47
+	(12.19)
+15.accom_int	-116.3***
+	(7.068)
+16.accom_int	16.77
+	(103.2)
+2.chain_int	-7.937***
+	(1.173)
+date_diff	0.446***
+	(0.0306)
+stay_length	6.350***
+	(0.616)
+Constant	136.2***
+	(6.935)
+	
+Observations	49,064
+R-squared	0.421
+Standard errors in parentheses	
+*** p<0.01, ** p<0.05, * p<0.1	

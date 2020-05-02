@@ -1,0 +1,1511 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/ml/Projects/PycharmProjects/agoda/testing_log.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}15 Dec 2019, 12:27:36
+{txt}
+{com}. sysuse "auto.dta"
+{txt}(1978 Automobile Data)
+
+{com}. 
+{txt}end of do-file
+
+{com}. browse
+
+. describe
+
+{txt}Contains data from {res}/Applications/Stata/ado/base/a/auto.dta
+{txt}  obs:{res}            74                          1978 Automobile Data
+{txt} vars:{res}            12                          13 Apr 2016 17:45
+{txt} size:{res}         3,182                          (_dta has notes)
+{txt}{hline}
+              storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:make           }{txt}{bind: str18   }{bind:{txt}%-18s     }{space 1}{bind:         }{bind:  }{res}{res}Make and Model{p_end}
+{p 0 48}{bind:price          }{txt}{bind: int     }{bind:{txt}%8.0gc    }{space 1}{bind:         }{bind:  }{res}{res}Price{p_end}
+{p 0 48}{bind:mpg            }{txt}{bind: int     }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}Mileage (mpg){p_end}
+{p 0 48}{bind:rep78          }{txt}{bind: int     }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}Repair Record 1978{p_end}
+{p 0 48}{bind:headroom       }{txt}{bind: float   }{bind:{txt}%6.1f     }{space 1}{bind:         }{bind:  }{res}{res}Headroom (in.){p_end}
+{p 0 48}{bind:trunk          }{txt}{bind: int     }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}Trunk space (cu. ft.){p_end}
+{p 0 48}{bind:weight         }{txt}{bind: int     }{bind:{txt}%8.0gc    }{space 1}{bind:         }{bind:  }{res}{res}Weight (lbs.){p_end}
+{p 0 48}{bind:length         }{txt}{bind: int     }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}Length (in.){p_end}
+{p 0 48}{bind:turn           }{txt}{bind: int     }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}Turn Circle (ft.) {p_end}
+{p 0 48}{bind:displacement   }{txt}{bind: int     }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}Displacement (cu. in.){p_end}
+{p 0 48}{bind:gear_ratio     }{txt}{bind: float   }{bind:{txt}%6.2f     }{space 1}{bind:         }{bind:  }{res}{res}Gear Ratio{p_end}
+{p 0 48}{bind:foreign        }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:origin   }{bind:  }{res}{res}Car type{p_end}
+{txt}{hline}
+Sorted by: {res}foreign
+
+{com}. notes
+{res}
+_dta:
+{txt}{p 2 6}
+1.
+from Consumer Reports with permission
+{p_end}
+
+{com}. summarize
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}make {c |}{res}          0
+{txt}{space 7}price {c |}{res}         74    6165.257    2949.496       3291      15906
+{txt}{space 9}mpg {c |}{res}         74     21.2973    5.785503         12         41
+{txt}{space 7}rep78 {c |}{res}         69    3.405797    .9899323          1          5
+{txt}{space 4}headroom {c |}{res}         74    2.993243    .8459948        1.5          5
+{txt}{hline 13}{c +}{hline 57}
+{space 7}trunk {c |}{res}         74    13.75676    4.277404          5         23
+{txt}{space 6}weight {c |}{res}         74    3019.459    777.1936       1760       4840
+{txt}{space 6}length {c |}{res}         74    187.9324    22.26634        142        233
+{txt}{space 8}turn {c |}{res}         74    39.64865    4.399354         31         51
+{txt}displacement {c |}{res}         74    197.2973    91.83722         79        425
+{txt}{hline 13}{c +}{hline 57}
+{space 2}gear_ratio {c |}{res}         74    3.014865    .4562871       2.19       3.89
+{txt}{space 5}foreign {c |}{res}         74    .2972973    .4601885          0          1
+
+{com}. codebook
+
+{txt}{hline}
+{res}make{right:Make and Model}
+{txt}{hline}
+
+{col 19}type:  string ({res}str18{txt}), but longest is str17
+
+{col 10}unique values:  {res}74{col 51}{txt}missing "":  {res}0{txt}/{res}74
+
+{txt}{col 15}examples:  {res}"Cad. Deville"
+{col 26}"Dodge Magnum"
+{col 26}"Merc. XR-7"
+{col 26}"Pont. Catalina"
+
+{txt}{col 16}warning:  variable has embedded blanks
+
+{txt}{hline}
+{res}price{right:Price}
+{txt}{hline}
+
+{col 19}type:  numeric ({res}int{txt})
+
+{col 18}range:  [{res}3291{txt},{res}15906{txt}]{col 55}units:  {res}1
+{col 10}{txt}unique values:  {res}74{col 51}{txt}missing .:  {res}0{txt}/{res}74
+
+{txt}{col 19}mean:{res}{col 26} 6165.26
+{txt}{col 15}std. dev:{res}{col 26}  2949.5
+
+{txt}{col 12}percentiles:{col 32}10%{col 42}25%{col 52}50%{col 62}75%{col 72}90%
+{res}{col 27}    3895{col 37}    4195{col 47}  5006.5{col 57}    6342{col 67}   11385
+
+{txt}{hline}
+{res}mpg{right:Mileage (mpg)}
+{txt}{hline}
+
+{col 19}type:  numeric ({res}int{txt})
+
+{col 18}range:  [{res}12{txt},{res}41{txt}]{col 55}units:  {res}1
+{col 10}{txt}unique values:  {res}21{col 51}{txt}missing .:  {res}0{txt}/{res}74
+
+{txt}{col 19}mean:{res}{col 26} 21.2973
+{txt}{col 15}std. dev:{res}{col 26}  5.7855
+
+{txt}{col 12}percentiles:{col 32}10%{col 42}25%{col 52}50%{col 62}75%{col 72}90%
+{res}{col 27}      14{col 37}      18{col 47}      20{col 57}      25{col 67}      29
+
+{txt}{hline}
+{res}rep78{right:Repair Record 1978}
+{txt}{hline}
+
+{col 19}type:  numeric ({res}int{txt})
+
+{col 18}range:  [{res}1{txt},{res}5{txt}]{col 55}units:  {res}1
+{col 10}{txt}unique values:  {res}5{col 51}{txt}missing .:  {res}5{txt}/{res}74
+
+{txt}{col 13}tabulation:  Freq.  Value
+{col 21}{res}         2{col 33}1
+{col 21}         8{col 33}2
+{col 21}        30{col 33}3
+{col 21}        18{col 33}4
+{col 21}        11{col 33}5
+{col 21}         5{col 33}.
+
+{txt}{hline}
+{res}headroom{right:Headroom (in.)}
+{txt}{hline}
+
+{col 19}type:  numeric ({res}float{txt})
+
+{col 18}range:  [{res}1.5{txt},{res}5{txt}]{col 55}units:  {res}.1
+{col 10}{txt}unique values:  {res}8{col 51}{txt}missing .:  {res}0{txt}/{res}74
+
+{txt}{col 13}tabulation:  Freq.  Value
+{col 21}{res}         4{col 33}1.5
+{col 21}        13{col 33}2
+{col 21}        14{col 33}2.5
+{col 21}        13{col 33}3
+{col 21}        15{col 33}3.5
+{col 21}        10{col 33}4
+{col 21}         4{col 33}4.5
+{col 21}         1{col 33}5
+
+{txt}{hline}
+{res}trunk{right:Trunk space (cu. ft.)}
+{txt}{hline}
+
+{col 19}type:  numeric ({res}int{txt})
+
+{col 18}range:  [{res}5{txt},{res}23{txt}]{col 55}units:  {res}1
+{col 10}{txt}unique values:  {res}18{col 51}{txt}missing .:  {res}0{txt}/{res}74
+
+{txt}{col 19}mean:{res}{col 26} 13.7568
+{txt}{col 15}std. dev:{res}{col 26}  4.2774
+
+{txt}{col 12}percentiles:{col 32}10%{col 42}25%{col 52}50%{col 62}75%{col 72}90%
+{res}{col 27}       8{col 37}      10{col 47}      14{col 57}      17{col 67}      20
+
+{txt}{hline}
+{res}weight{right:Weight (lbs.)}
+{txt}{hline}
+
+{col 19}type:  numeric ({res}int{txt})
+
+{col 18}range:  [{res}1760{txt},{res}4840{txt}]{col 55}units:  {res}10
+{col 10}{txt}unique values:  {res}64{col 51}{txt}missing .:  {res}0{txt}/{res}74
+
+{txt}{col 19}mean:{res}{col 26} 3019.46
+{txt}{col 15}std. dev:{res}{col 26} 777.194
+
+{txt}{col 12}percentiles:{col 32}10%{col 42}25%{col 52}50%{col 62}75%{col 72}90%
+{res}{col 27}    2020{col 37}    2240{col 47}    3190{col 57}    3600{col 67}    4060
+
+{txt}{hline}
+{res}length{right:Length (in.)}
+{txt}{hline}
+
+{col 19}type:  numeric ({res}int{txt})
+
+{col 18}range:  [{res}142{txt},{res}233{txt}]{col 55}units:  {res}1
+{col 10}{txt}unique values:  {res}47{col 51}{txt}missing .:  {res}0{txt}/{res}74
+
+{txt}{col 19}mean:{res}{col 26} 187.932
+{txt}{col 15}std. dev:{res}{col 26} 22.2663
+
+{txt}{col 12}percentiles:{col 32}10%{col 42}25%{col 52}50%{col 62}75%{col 72}90%
+{res}{col 27}     157{col 37}     170{col 47}   192.5{col 57}     204{col 67}     218
+
+{txt}{hline}
+{res}turn{right:Turn Circle (ft.) }
+{txt}{hline}
+
+{col 19}type:  numeric ({res}int{txt})
+
+{col 18}range:  [{res}31{txt},{res}51{txt}]{col 55}units:  {res}1
+{col 10}{txt}unique values:  {res}18{col 51}{txt}missing .:  {res}0{txt}/{res}74
+
+{txt}{col 19}mean:{res}{col 26} 39.6486
+{txt}{col 15}std. dev:{res}{col 26} 4.39935
+
+{txt}{col 12}percentiles:{col 32}10%{col 42}25%{col 52}50%{col 62}75%{col 72}90%
+{res}{col 27}      34{col 37}      36{col 47}      40{col 57}      43{col 67}      45
+
+{txt}{hline}
+{res}displacement{right:Displacement (cu. in.)}
+{txt}{hline}
+
+{col 19}type:  numeric ({res}int{txt})
+
+{col 18}range:  [{res}79{txt},{res}425{txt}]{col 55}units:  {res}1
+{col 10}{txt}unique values:  {res}31{col 51}{txt}missing .:  {res}0{txt}/{res}74
+
+{txt}{col 19}mean:{res}{col 26} 197.297
+{txt}{col 15}std. dev:{res}{col 26} 91.8372
+
+{txt}{col 12}percentiles:{col 32}10%{col 42}25%{col 52}50%{col 62}75%{col 72}90%
+{res}{col 27}      97{col 37}     119{col 47}     196{col 57}     250{col 67}     350
+
+{txt}{hline}
+{res}gear_ratio{right:Gear Ratio}
+{txt}{hline}
+
+{col 19}type:  numeric ({res}float{txt})
+
+{col 18}range:  [{res}2.19{txt},{res}3.89{txt}]{col 55}units:  {res}.01
+{col 10}{txt}unique values:  {res}36{col 51}{txt}missing .:  {res}0{txt}/{res}74
+
+{txt}{col 19}mean:{res}{col 26} 3.01486
+{txt}{col 15}std. dev:{res}{col 26} .456287
+
+{txt}{col 12}percentiles:{col 32}10%{col 42}25%{col 52}50%{col 62}75%{col 72}90%
+{res}{col 27}    2.43{col 37}    2.73{col 47}   2.955{col 57}    3.37{col 67}    3.72
+
+{txt}{hline}
+{res}foreign{right:Car type}
+{txt}{hline}
+
+{col 19}type:  numeric ({res}byte{txt})
+{ralign 22:label}:  {res:origin}
+
+{col 18}range:  [{res}0{txt},{res}1{txt}]{col 55}units:  {res}1
+{col 10}{txt}unique values:  {res}2{col 51}{txt}missing .:  {res}0{txt}/{res}74
+
+{txt}{col 13}tabulation:  Freq.   Numeric  Label
+{col 21}{res}        52{col 33}       0{col 43}{txt}Domestic
+{col 21}{res}        22{col 33}       1{col 43}{txt}Foreign
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. browse // opens data editor
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. describe
+
+{txt}Contains data from {res}/Applications/Stata/ado/base/a/auto.dta
+{txt}  obs:{res}            74                          1978 Automobile Data
+{txt} vars:{res}            12                          13 Apr 2016 17:45
+{txt} size:{res}         3,182                          (_dta has notes)
+{txt}{hline}
+              storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:make           }{txt}{bind: str18   }{bind:{txt}%-18s     }{space 1}{bind:         }{bind:  }{res}{res}Make and Model{p_end}
+{p 0 48}{bind:price          }{txt}{bind: int     }{bind:{txt}%8.0gc    }{space 1}{bind:         }{bind:  }{res}{res}Price{p_end}
+{p 0 48}{bind:mpg            }{txt}{bind: int     }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}Mileage (mpg){p_end}
+{p 0 48}{bind:rep78          }{txt}{bind: int     }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}Repair Record 1978{p_end}
+{p 0 48}{bind:headroom       }{txt}{bind: float   }{bind:{txt}%6.1f     }{space 1}{bind:         }{bind:  }{res}{res}Headroom (in.){p_end}
+{p 0 48}{bind:trunk          }{txt}{bind: int     }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}Trunk space (cu. ft.){p_end}
+{p 0 48}{bind:weight         }{txt}{bind: int     }{bind:{txt}%8.0gc    }{space 1}{bind:         }{bind:  }{res}{res}Weight (lbs.){p_end}
+{p 0 48}{bind:length         }{txt}{bind: int     }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}Length (in.){p_end}
+{p 0 48}{bind:turn           }{txt}{bind: int     }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}Turn Circle (ft.) {p_end}
+{p 0 48}{bind:displacement   }{txt}{bind: int     }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}Displacement (cu. in.){p_end}
+{p 0 48}{bind:gear_ratio     }{txt}{bind: float   }{bind:{txt}%6.2f     }{space 1}{bind:         }{bind:  }{res}{res}Gear Ratio{p_end}
+{p 0 48}{bind:foreign        }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:origin   }{bind:  }{res}{res}Car type{p_end}
+{txt}{hline}
+Sorted by: {res}foreign
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. summarize
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}make {c |}{res}          0
+{txt}{space 7}price {c |}{res}         74    6165.257    2949.496       3291      15906
+{txt}{space 9}mpg {c |}{res}         74     21.2973    5.785503         12         41
+{txt}{space 7}rep78 {c |}{res}         69    3.405797    .9899323          1          5
+{txt}{space 4}headroom {c |}{res}         74    2.993243    .8459948        1.5          5
+{txt}{hline 13}{c +}{hline 57}
+{space 7}trunk {c |}{res}         74    13.75676    4.277404          5         23
+{txt}{space 6}weight {c |}{res}         74    3019.459    777.1936       1760       4840
+{txt}{space 6}length {c |}{res}         74    187.9324    22.26634        142        233
+{txt}{space 8}turn {c |}{res}         74    39.64865    4.399354         31         51
+{txt}displacement {c |}{res}         74    197.2973    91.83722         79        425
+{txt}{hline 13}{c +}{hline 57}
+{space 2}gear_ratio {c |}{res}         74    3.014865    .4562871       2.19       3.89
+{txt}{space 5}foreign {c |}{res}         74    .2972973    .4601885          0          1
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. codebook
+
+{txt}{hline}
+{res}make{right:Make and Model}
+{txt}{hline}
+
+{col 19}type:  string ({res}str18{txt}), but longest is str17
+
+{col 10}unique values:  {res}74{col 51}{txt}missing "":  {res}0{txt}/{res}74
+
+{txt}{col 15}examples:  {res}"Cad. Deville"
+{col 26}"Dodge Magnum"
+{col 26}"Merc. XR-7"
+{col 26}"Pont. Catalina"
+
+{txt}{col 16}warning:  variable has embedded blanks
+
+{txt}{hline}
+{res}price{right:Price}
+{txt}{hline}
+
+{col 19}type:  numeric ({res}int{txt})
+
+{col 18}range:  [{res}3291{txt},{res}15906{txt}]{col 55}units:  {res}1
+{col 10}{txt}unique values:  {res}74{col 51}{txt}missing .:  {res}0{txt}/{res}74
+
+{txt}{col 19}mean:{res}{col 26} 6165.26
+{txt}{col 15}std. dev:{res}{col 26}  2949.5
+
+{txt}{col 12}percentiles:{col 32}10%{col 42}25%{col 52}50%{col 62}75%{col 72}90%
+{res}{col 27}    3895{col 37}    4195{col 47}  5006.5{col 57}    6342{col 67}   11385
+
+{txt}{hline}
+{res}mpg{right:Mileage (mpg)}
+{txt}{hline}
+
+{col 19}type:  numeric ({res}int{txt})
+
+{col 18}range:  [{res}12{txt},{res}41{txt}]{col 55}units:  {res}1
+{col 10}{txt}unique values:  {res}21{col 51}{txt}missing .:  {res}0{txt}/{res}74
+
+{txt}{col 19}mean:{res}{col 26} 21.2973
+{txt}{col 15}std. dev:{res}{col 26}  5.7855
+
+{txt}{col 12}percentiles:{col 32}10%{col 42}25%{col 52}50%{col 62}75%{col 72}90%
+{res}{col 27}      14{col 37}      18{col 47}      20{col 57}      25{col 67}      29
+
+{txt}{hline}
+{res}rep78{right:Repair Record 1978}
+{txt}{hline}
+
+{col 19}type:  numeric ({res}int{txt})
+
+{col 18}range:  [{res}1{txt},{res}5{txt}]{col 55}units:  {res}1
+{col 10}{txt}unique values:  {res}5{col 51}{txt}missing .:  {res}5{txt}/{res}74
+
+{txt}{col 13}tabulation:  Freq.  Value
+{col 21}{res}         2{col 33}1
+{col 21}         8{col 33}2
+{col 21}        30{col 33}3
+{col 21}        18{col 33}4
+{col 21}        11{col 33}5
+{col 21}         5{col 33}.
+
+{txt}{hline}
+{res}headroom{right:Headroom (in.)}
+{txt}{hline}
+
+{col 19}type:  numeric ({res}float{txt})
+
+{col 18}range:  [{res}1.5{txt},{res}5{txt}]{col 55}units:  {res}.1
+{col 10}{txt}unique values:  {res}8{col 51}{txt}missing .:  {res}0{txt}/{res}74
+
+{txt}{col 13}tabulation:  Freq.  Value
+{col 21}{res}         4{col 33}1.5
+{col 21}        13{col 33}2
+{col 21}        14{col 33}2.5
+{col 21}        13{col 33}3
+{col 21}        15{col 33}3.5
+{col 21}        10{col 33}4
+{col 21}         4{col 33}4.5
+{col 21}         1{col 33}5
+
+{txt}{hline}
+{res}trunk{right:Trunk space (cu. ft.)}
+{txt}{hline}
+
+{col 19}type:  numeric ({res}int{txt})
+
+{col 18}range:  [{res}5{txt},{res}23{txt}]{col 55}units:  {res}1
+{col 10}{txt}unique values:  {res}18{col 51}{txt}missing .:  {res}0{txt}/{res}74
+
+{txt}{col 19}mean:{res}{col 26} 13.7568
+{txt}{col 15}std. dev:{res}{col 26}  4.2774
+
+{txt}{col 12}percentiles:{col 32}10%{col 42}25%{col 52}50%{col 62}75%{col 72}90%
+{res}{col 27}       8{col 37}      10{col 47}      14{col 57}      17{col 67}      20
+
+{txt}{hline}
+{res}weight{right:Weight (lbs.)}
+{txt}{hline}
+
+{col 19}type:  numeric ({res}int{txt})
+
+{col 18}range:  [{res}1760{txt},{res}4840{txt}]{col 55}units:  {res}10
+{col 10}{txt}unique values:  {res}64{col 51}{txt}missing .:  {res}0{txt}/{res}74
+
+{txt}{col 19}mean:{res}{col 26} 3019.46
+{txt}{col 15}std. dev:{res}{col 26} 777.194
+
+{txt}{col 12}percentiles:{col 32}10%{col 42}25%{col 52}50%{col 62}75%{col 72}90%
+{res}{col 27}    2020{col 37}    2240{col 47}    3190{col 57}    3600{col 67}    4060
+
+{txt}{hline}
+{res}length{right:Length (in.)}
+{txt}{hline}
+
+{col 19}type:  numeric ({res}int{txt})
+
+{col 18}range:  [{res}142{txt},{res}233{txt}]{col 55}units:  {res}1
+{col 10}{txt}unique values:  {res}47{col 51}{txt}missing .:  {res}0{txt}/{res}74
+
+{txt}{col 19}mean:{res}{col 26} 187.932
+{txt}{col 15}std. dev:{res}{col 26} 22.2663
+
+{txt}{col 12}percentiles:{col 32}10%{col 42}25%{col 52}50%{col 62}75%{col 72}90%
+{res}{col 27}     157{col 37}     170{col 47}   192.5{col 57}     204{col 67}     218
+
+{txt}{hline}
+{res}turn{right:Turn Circle (ft.) }
+{txt}{hline}
+
+{col 19}type:  numeric ({res}int{txt})
+
+{col 18}range:  [{res}31{txt},{res}51{txt}]{col 55}units:  {res}1
+{col 10}{txt}unique values:  {res}18{col 51}{txt}missing .:  {res}0{txt}/{res}74
+
+{txt}{col 19}mean:{res}{col 26} 39.6486
+{txt}{col 15}std. dev:{res}{col 26} 4.39935
+
+{txt}{col 12}percentiles:{col 32}10%{col 42}25%{col 52}50%{col 62}75%{col 72}90%
+{res}{col 27}      34{col 37}      36{col 47}      40{col 57}      43{col 67}      45
+
+{txt}{hline}
+{res}displacement{right:Displacement (cu. in.)}
+{txt}{hline}
+
+{col 19}type:  numeric ({res}int{txt})
+
+{col 18}range:  [{res}79{txt},{res}425{txt}]{col 55}units:  {res}1
+{col 10}{txt}unique values:  {res}31{col 51}{txt}missing .:  {res}0{txt}/{res}74
+
+{txt}{col 19}mean:{res}{col 26} 197.297
+{txt}{col 15}std. dev:{res}{col 26} 91.8372
+
+{txt}{col 12}percentiles:{col 32}10%{col 42}25%{col 52}50%{col 62}75%{col 72}90%
+{res}{col 27}      97{col 37}     119{col 47}     196{col 57}     250{col 67}     350
+
+{txt}{hline}
+{res}gear_ratio{right:Gear Ratio}
+{txt}{hline}
+
+{col 19}type:  numeric ({res}float{txt})
+
+{col 18}range:  [{res}2.19{txt},{res}3.89{txt}]{col 55}units:  {res}.01
+{col 10}{txt}unique values:  {res}36{col 51}{txt}missing .:  {res}0{txt}/{res}74
+
+{txt}{col 19}mean:{res}{col 26} 3.01486
+{txt}{col 15}std. dev:{res}{col 26} .456287
+
+{txt}{col 12}percentiles:{col 32}10%{col 42}25%{col 52}50%{col 62}75%{col 72}90%
+{res}{col 27}    2.43{col 37}    2.73{col 47}   2.955{col 57}    3.37{col 67}    3.72
+
+{txt}{hline}
+{res}foreign{right:Car type}
+{txt}{hline}
+
+{col 19}type:  numeric ({res}byte{txt})
+{ralign 22:label}:  {res:origin}
+
+{col 18}range:  [{res}0{txt},{res}1{txt}]{col 55}units:  {res}1
+{col 10}{txt}unique values:  {res}2{col 51}{txt}missing .:  {res}0{txt}/{res}74
+
+{txt}{col 13}tabulation:  Freq.   Numeric  Label
+{col 21}{res}        52{col 33}       0{col 43}{txt}Domestic
+{col 21}{res}        22{col 33}       1{col 43}{txt}Foreign
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. codebook make
+
+{txt}{hline}
+{res}make{right:Make and Model}
+{txt}{hline}
+
+{col 19}type:  string ({res}str18{txt}), but longest is str17
+
+{col 10}unique values:  {res}74{col 51}{txt}missing "":  {res}0{txt}/{res}74
+
+{txt}{col 15}examples:  {res}"Cad. Deville"
+{col 26}"Dodge Magnum"
+{col 26}"Merc. XR-7"
+{col 26}"Pont. Catalina"
+
+{txt}{col 16}warning:  variable has embedded blanks
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. codebook rep78
+
+{txt}{hline}
+{res}rep78{right:Repair Record 1978}
+{txt}{hline}
+
+{col 19}type:  numeric ({res}int{txt})
+
+{col 18}range:  [{res}1{txt},{res}5{txt}]{col 55}units:  {res}1
+{col 10}{txt}unique values:  {res}5{col 51}{txt}missing .:  {res}5{txt}/{res}74
+
+{txt}{col 13}tabulation:  Freq.  Value
+{col 21}{res}         2{col 33}1
+{col 21}         8{col 33}2
+{col 21}        30{col 33}3
+{col 21}        18{col 33}4
+{col 21}        11{col 33}5
+{col 21}         5{col 33}.
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. describe rep78
+
+              {txt}storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:rep78          }{txt}{bind: int     }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}Repair Record 1978{p_end}
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. browse if missing(rep78)
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. liat make if missing(rep78)
+{err}command {bf}liat{sf} is unrecognized
+{txt}{search r(199), local:r(199);}
+
+end of do-file
+
+{search r(199), local:r(199);}
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. list make if missing(rep78)
+{txt}
+     {c TLC}{hline 15}{c TRC}
+     {c |} {res}make          {txt}{c |}
+     {c LT}{hline 15}{c RT}
+  3. {c |} {res}AMC Spirit    {txt}{c |}
+  7. {c |} {res}Buick Opel    {txt}{c |}
+ 45. {c |} {res}Plym. Sapporo {txt}{c |}
+ 51. {c |} {res}Pont. Phoenix {txt}{c |}
+ 64. {c |} {res}Peugeot 604   {txt}{c |}
+     {c BLC}{hline 15}{c BRC}
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. summarize price
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 7}price {c |}{res}         74    6165.257    2949.496       3291      15906
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. summarize price, detail
+
+                            {txt}Price
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}     3291           3291
+{txt} 5%    {res}     3748           3299
+{txt}10%    {res}     3895           3667       {txt}Obs         {res}         74
+{txt}25%    {res}     4195           3748       {txt}Sum of Wgt. {res}         74
+
+{txt}50%    {res}   5006.5                      {txt}Mean          {res} 6165.257
+                        {txt}Largest       Std. Dev.     {res} 2949.496
+{txt}75%    {res}     6342          13466
+{txt}90%    {res}    11385          13594       {txt}Variance      {res}  8699526
+{txt}95%    {res}    13466          14500       {txt}Skewness      {res} 1.653434
+{txt}99%    {res}    15906          15906       {txt}Kurtosis      {res} 4.819188
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. list price if > 13000
+{err}>13000 invalid name
+{txt}{search r(198), local:r(198);}
+
+end of do-file
+
+{search r(198), local:r(198);}
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. list price if price > 13000
+{txt}
+     {c TLC}{hline 8}{c TRC}
+     {c |} {res} price {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 12. {c |} {res}14,500 {txt}{c |}
+ 13. {c |} {res}15,906 {txt}{c |}
+ 27. {c |} {res}13,594 {txt}{c |}
+ 28. {c |} {res}13,466 {txt}{c |}
+     {c BLC}{hline 8}{c BRC}
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. list make if price > 13000
+{txt}
+     {c TLC}{hline 18}{c TRC}
+     {c |} {res}make             {txt}{c |}
+     {c LT}{hline 18}{c RT}
+ 12. {c |} {res}Cad. Eldorado    {txt}{c |}
+ 13. {c |} {res}Cad. Seville     {txt}{c |}
+ 27. {c |} {res}Linc. Mark V     {txt}{c |}
+ 28. {c |} {res}Linc. Versailles {txt}{c |}
+     {c BLC}{hline 18}{c BRC}
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. tabulate foreign
+
+   {txt}Car type {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+   Domestic {c |}{res}         52       70.27       70.27
+{txt}    Foreign {c |}{res}         22       29.73      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         74      100.00
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. tab rep78
+
+     {txt}Repair {c |}
+Record 1978 {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          1 {c |}{res}          2        2.90        2.90
+{txt}          2 {c |}{res}          8       11.59       14.49
+{txt}          3 {c |}{res}         30       43.48       57.97
+{txt}          4 {c |}{res}         18       26.09       84.06
+{txt}          5 {c |}{res}         11       15.94      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         69      100.00
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. tab foreign rep78
+
+           {txt}{c |}                   Repair Record 1978
+  Car type {c |}         1          2          3          4          5 {c |}     Total
+{hline 11}{c +}{hline 55}{c +}{hline 10}
+  Domestic {c |}{res}         2          8         27          9          2 {txt}{c |}{res}        48 
+{txt}   Foreign {c |}{res}         0          0          3          9          9 {txt}{c |}{res}        21 
+{txt}{hline 11}{c +}{hline 55}{c +}{hline 10}
+     Total {c |}{res}         2          8         30         18         11 {txt}{c |}{res}        69 
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. tab rep78 foreign
+
+    {txt}Repair {c |}
+    Record {c |}       Car type
+      1978 {c |}  Domestic    Foreign {c |}     Total
+{hline 11}{c +}{hline 22}{c +}{hline 10}
+         1 {c |}{res}         2          0 {txt}{c |}{res}         2 
+{txt}         2 {c |}{res}         8          0 {txt}{c |}{res}         8 
+{txt}         3 {c |}{res}        27          3 {txt}{c |}{res}        30 
+{txt}         4 {c |}{res}         9          9 {txt}{c |}{res}        18 
+{txt}         5 {c |}{res}         2          9 {txt}{c |}{res}        11 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     Total {c |}{res}        48         21 {txt}{c |}{res}        69 
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. tab rep78 foreign, row
+{txt}
+{c TLC}{hline 16}{c TRC}
+{c |} Key{col 18}{c |}
+{c LT}{hline 16}{c RT}
+{c |}{space 3}{it:frequency}{col 18}{c |}
+{c |}{space 1}{it:row percentage}{col 18}{c |}
+{c BLC}{hline 16}{c BRC}
+
+    Repair {c |}
+    Record {c |}       Car type
+      1978 {c |}  Domestic    Foreign {c |}     Total
+{hline 11}{c +}{hline 22}{c +}{hline 10}
+         1 {c |}{res}         2          0 {txt}{c |}{res}         2 
+           {txt}{c |}{res}    100.00       0.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+         2 {c |}{res}         8          0 {txt}{c |}{res}         8 
+           {txt}{c |}{res}    100.00       0.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+         3 {c |}{res}        27          3 {txt}{c |}{res}        30 
+           {txt}{c |}{res}     90.00      10.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+         4 {c |}{res}         9          9 {txt}{c |}{res}        18 
+           {txt}{c |}{res}     50.00      50.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+         5 {c |}{res}         2          9 {txt}{c |}{res}        11 
+           {txt}{c |}{res}     18.18      81.82 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     Total {c |}{res}        48         21 {txt}{c |}{res}        69 
+           {txt}{c |}{res}     69.57      30.43 {txt}{c |}{res}    100.00 
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. by foreign, sort: summarize mpg
+
+{txt}{hline}
+-> foreign = Domestic
+
+    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 9}mpg {c |}{res}         52    19.82692    4.743297         12         34
+
+{txt}{hline}
+-> foreign = Foreign
+
+    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 9}mpg {c |}{res}         22    24.77273    6.611187         14         41
+
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. ttest mpg, by(foreign)
+
+{txt}Two-sample t test with equal variances
+{hline 9}{c TT}{hline 68}
+   Group{col 10}{c |}{col 16}Obs{col 27}Mean{col 35}Std. Err.{col 47}Std. Dev.{col 59}[95% Conf. Interval]
+{hline 9}{c +}{hline 68}
+Domestic {c |}{res}{col 12}     52{col 22} 19.82692{col 34}  .657777{col 46} 4.743297{col 58} 18.50638{col 70} 21.14747
+ {txt}Foreign {c |}{res}{col 12}     22{col 22} 24.77273{col 34}  1.40951{col 46} 6.611187{col 58} 21.84149{col 70} 27.70396
+{txt}{hline 9}{c +}{hline 68}
+combined {c |}{res}{col 12}     74{col 22}  21.2973{col 34} .6725511{col 46} 5.785503{col 58}  19.9569{col 70} 22.63769
+{txt}{hline 9}{c +}{hline 68}
+    diff {c |}{res}{col 22}-4.945804{col 34} 1.362162{col 58}-7.661225{col 70}-2.230384
+{txt}{hline 9}{c BT}{hline 68}
+    diff = mean({res}Domestic{txt}) - mean({res}Foreign{txt})                         t = {res} -3.6308
+{txt}Ho: diff = 0                                     degrees of freedom = {res}      72
+
+    {txt}Ha: diff < 0                 Ha: diff != 0                 Ha: diff > 0
+ Pr(T < t) = {res}0.0003         {txt}Pr(|T| > |t|) = {res}0.0005          {txt}Pr(T > t) = {res}0.9997
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. corr mpg weight
+{txt}(obs=74)
+
+             {c |}      mpg   weight
+{hline 13}{c +}{hline 18}
+         mpg {c |}{res}   1.0000
+      {txt}weight {c |}{res}  -0.8072   1.0000
+
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. pwcorr mpg weight
+
+             {txt}{c |}      mpg   weight
+{hline 13}{c +}{hline 18}
+         mpg {c |} {res}  1.0000 
+      {txt}weight {c |} {res} -0.8072   1.0000 
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. by foreign, sort: corr mpg weight
+
+{txt}{hline}
+-> foreign = Domestic
+(obs=52)
+
+             {c |}      mpg   weight
+{hline 13}{c +}{hline 18}
+         mpg {c |}{res}   1.0000
+      {txt}weight {c |}{res}  -0.8759   1.0000
+
+
+{txt}{hline}
+-> foreign = Foreign
+(obs=22)
+
+             {c |}      mpg   weight
+{hline 13}{c +}{hline 18}
+         mpg {c |}{res}   1.0000
+      {txt}weight {c |}{res}  -0.6829   1.0000
+
+
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. correlate mpg weight length turn displacement
+{txt}(obs=74)
+
+             {c |}      mpg   weight   length     turn displa~t
+{hline 13}{c +}{hline 45}
+         mpg {c |}{res}   1.0000
+      {txt}weight {c |}{res}  -0.8072   1.0000
+      {txt}length {c |}{res}  -0.7958   0.9460   1.0000
+        {txt}turn {c |}{res}  -0.7192   0.8574   0.8643   1.0000
+{txt}displacement {c |}{res}  -0.7056   0.8949   0.8351   0.7768   1.0000
+
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. twoway (scatter mpg weight)
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. by foreign, sort: summarize mpg
+
+{txt}{hline}
+-> foreign = Domestic
+
+    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 9}mpg {c |}{res}         52    19.82692    4.743297         12         34
+
+{txt}{hline}
+-> foreign = Foreign
+
+    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 9}mpg {c |}{res}         22    24.77273    6.611187         14         41
+
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. tab foreign, summarize(mpg)
+
+            {txt}{c |}      Summary of Mileage (mpg)
+   Car type {c |}        Mean   Std. Dev.       Freq.
+{hline 12}{c +}{hline 36}
+   Domestic {c |}  {res} 19.826923   4.7432972          52
+  {txt}  Foreign {c |}  {res} 24.772727   6.6111869          22
+{txt}{hline 12}{c +}{hline 36}
+      Total {c |}  {res} 21.297297   5.7855032          74
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. twoway (scatter mpg weight), by(foreign, total)
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. gwn weightsq = weight ^ 2
+{err}command {bf}gwn{sf} is unrecognized
+{txt}{search r(199), local:r(199);}
+
+end of do-file
+
+{search r(199), local:r(199);}
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. gen weightsq = weight ^ 2
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. tab weightsq, detail
+{err}option {bf:detail} not allowed
+{txt}{search r(198), local:r(198);}
+
+end of do-file
+
+{search r(198), local:r(198);}
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. summarize weightsq, detail
+
+                          {txt}weightsq
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}  3097600        3097600
+{txt} 5%    {res}  3348900        3240000
+{txt}10%    {res}  4080400        3240000       {txt}Obs         {res}         74
+{txt}25%    {res}  5017600        3348900       {txt}Sum of Wgt. {res}         74
+
+{txt}50%    {res} 1.02e+07                      {txt}Mean          {res}  9713003
+                        {txt}Largest       Std. Dev.     {res}  4823353
+{txt}75%    {res} 1.30e+07       1.84e+07
+{txt}90%    {res} 1.65e+07       1.87e+07       {txt}Variance      {res} 2.33e+13
+{txt}95%    {res} 1.84e+07       2.23e+07       {txt}Skewness      {res} .5847119
+{txt}99%    {res} 2.34e+07       2.34e+07       {txt}Kurtosis      {res} 2.793822
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. reg mpg weight weightsq foreign
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}        74
+{txt}{hline 13}{c +}{hline 34}   F(3, 70)        = {res}    52.25
+{txt}       Model {c |} {res} 1689.15372         3   563.05124   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res}  754.30574        70  10.7757963   {txt}R-squared       ={res}    0.6913
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.6781
+{txt}       Total {c |} {res} 2443.45946        73  33.4720474   {txt}Root MSE        =   {res} 3.2827
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}         mpg{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}weight {c |}{col 14}{res}{space 2}-.0165729{col 26}{space 2} .0039692{col 37}{space 1}   -4.18{col 46}{space 3}0.000{col 54}{space 4}-.0244892{col 67}{space 3}-.0086567
+{txt}{space 4}weightsq {c |}{col 14}{res}{space 2} 1.59e-06{col 26}{space 2} 6.25e-07{col 37}{space 1}    2.55{col 46}{space 3}0.013{col 54}{space 4} 3.45e-07{col 67}{space 3} 2.84e-06
+{txt}{space 5}foreign {c |}{col 14}{res}{space 2}  -2.2035{col 26}{space 2} 1.059246{col 37}{space 1}   -2.08{col 46}{space 3}0.041{col 54}{space 4}  -4.3161{col 67}{space 3}-.0909002
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 56.53884{col 26}{space 2} 6.197383{col 37}{space 1}    9.12{col 46}{space 3}0.000{col 54}{space 4} 44.17855{col 67}{space 3} 68.89913
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. reg mpg weightsq foreign
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}        74
+{txt}{hline 13}{c +}{hline 34}   F(2, 71)        = {res}    56.57
+{txt}       Model {c |} {res} 1501.28673         2  750.643366   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 942.172728        71  13.2700384   {txt}R-squared       ={res}    0.6144
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.6035
+{txt}       Total {c |} {res} 2443.45946        73  33.4720474   {txt}Root MSE        =   {res} 3.6428
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}         mpg{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 4}weightsq {c |}{col 14}{res}{space 2}-9.87e-07{col 26}{space 2} 1.07e-07{col 37}{space 1}   -9.20{col 46}{space 3}0.000{col 54}{space 4}-1.20e-06{col 67}{space 3}-7.73e-07
+{txt}{space 5}foreign {c |}{col 14}{res}{space 2}-.9099653{col 26}{space 2} 1.124064{col 37}{space 1}   -0.81{col 46}{space 3}0.421{col 54}{space 4}-3.151286{col 67}{space 3} 1.331355
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 31.15103{col 26}{space 2} 1.330534{col 37}{space 1}   23.41{col 46}{space 3}0.000{col 54}{space 4} 28.49802{col 67}{space 3} 33.80404
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. pwcorr weight weightsq
+
+             {txt}{c |}   weight weightsq
+{hline 13}{c +}{hline 18}
+      weight {c |} {res}  1.0000 
+    {txt}weightsq {c |} {res}  0.9915   1.0000 
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. predict mpghat
+{txt}(option {bf:xb} assumed; fitted values)
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. twoway (scatter mpg weight) (line mpghat weight, sort), by(foreign)
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. twoway (scatter mpg weight) (line mpghat weight, sort), by(foreign)
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. twoway (scatter mpg weight) (line weight mpghat, sort), by(foreign)
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. twoway (scatter mpg weight) (line mpghat weight, sort), by(foreign)
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. reg mpg weight weightsq foreign // is it correct to include both weight vars?
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}        74
+{txt}{hline 13}{c +}{hline 34}   F(3, 70)        = {res}    52.25
+{txt}       Model {c |} {res} 1689.15372         3   563.05124   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res}  754.30574        70  10.7757963   {txt}R-squared       ={res}    0.6913
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.6781
+{txt}       Total {c |} {res} 2443.45946        73  33.4720474   {txt}Root MSE        =   {res} 3.2827
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}         mpg{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}weight {c |}{col 14}{res}{space 2}-.0165729{col 26}{space 2} .0039692{col 37}{space 1}   -4.18{col 46}{space 3}0.000{col 54}{space 4}-.0244892{col 67}{space 3}-.0086567
+{txt}{space 4}weightsq {c |}{col 14}{res}{space 2} 1.59e-06{col 26}{space 2} 6.25e-07{col 37}{space 1}    2.55{col 46}{space 3}0.013{col 54}{space 4} 3.45e-07{col 67}{space 3} 2.84e-06
+{txt}{space 5}foreign {c |}{col 14}{res}{space 2}  -2.2035{col 26}{space 2} 1.059246{col 37}{space 1}   -2.08{col 46}{space 3}0.041{col 54}{space 4}  -4.3161{col 67}{space 3}-.0909002
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 56.53884{col 26}{space 2} 6.197383{col 37}{space 1}    9.12{col 46}{space 3}0.000{col 54}{space 4} 44.17855{col 67}{space 3} 68.89913
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. predict mpghat
+{err}variable {bf}mpghat{sf} already defined
+{txt}{search r(110), local:r(110);}
+
+end of do-file
+
+{search r(110), local:r(110);}
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. reg mpg weight weightsq foreign // is it correct to include both weight vars?
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}        74
+{txt}{hline 13}{c +}{hline 34}   F(3, 70)        = {res}    52.25
+{txt}       Model {c |} {res} 1689.15372         3   563.05124   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res}  754.30574        70  10.7757963   {txt}R-squared       ={res}    0.6913
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.6781
+{txt}       Total {c |} {res} 2443.45946        73  33.4720474   {txt}Root MSE        =   {res} 3.2827
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}         mpg{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}weight {c |}{col 14}{res}{space 2}-.0165729{col 26}{space 2} .0039692{col 37}{space 1}   -4.18{col 46}{space 3}0.000{col 54}{space 4}-.0244892{col 67}{space 3}-.0086567
+{txt}{space 4}weightsq {c |}{col 14}{res}{space 2} 1.59e-06{col 26}{space 2} 6.25e-07{col 37}{space 1}    2.55{col 46}{space 3}0.013{col 54}{space 4} 3.45e-07{col 67}{space 3} 2.84e-06
+{txt}{space 5}foreign {c |}{col 14}{res}{space 2}  -2.2035{col 26}{space 2} 1.059246{col 37}{space 1}   -2.08{col 46}{space 3}0.041{col 54}{space 4}  -4.3161{col 67}{space 3}-.0909002
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 56.53884{col 26}{space 2} 6.197383{col 37}{space 1}    9.12{col 46}{space 3}0.000{col 54}{space 4} 44.17855{col 67}{space 3} 68.89913
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. drop mpghat
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. predict mpghat
+{txt}(option {bf:xb} assumed; fitted values)
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. twoway (scatter mpg weight) (line mpghat weight, sort), by(foreign)
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. reg mpg weightsq foreign // is it correct to include both weight vars?
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}        74
+{txt}{hline 13}{c +}{hline 34}   F(2, 71)        = {res}    56.57
+{txt}       Model {c |} {res} 1501.28673         2  750.643366   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 942.172728        71  13.2700384   {txt}R-squared       ={res}    0.6144
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.6035
+{txt}       Total {c |} {res} 2443.45946        73  33.4720474   {txt}Root MSE        =   {res} 3.6428
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}         mpg{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 4}weightsq {c |}{col 14}{res}{space 2}-9.87e-07{col 26}{space 2} 1.07e-07{col 37}{space 1}   -9.20{col 46}{space 3}0.000{col 54}{space 4}-1.20e-06{col 67}{space 3}-7.73e-07
+{txt}{space 5}foreign {c |}{col 14}{res}{space 2}-.9099653{col 26}{space 2} 1.124064{col 37}{space 1}   -0.81{col 46}{space 3}0.421{col 54}{space 4}-3.151286{col 67}{space 3} 1.331355
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 31.15103{col 26}{space 2} 1.330534{col 37}{space 1}   23.41{col 46}{space 3}0.000{col 54}{space 4} 28.49802{col 67}{space 3} 33.80404
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. drop mpghat
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. predict mpghat
+{txt}(option {bf:xb} assumed; fitted values)
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. twoway (scatter mpg weight) (line mpghat weight, sort), by(foreign)
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. drop mpghat
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. reg mpg weight foreign // is it correct to include both weight vars?
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}        74
+{txt}{hline 13}{c +}{hline 34}   F(2, 71)        = {res}    69.75
+{txt}       Model {c |} {res}  1619.2877         2  809.643849   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 824.171761        71   11.608053   {txt}R-squared       ={res}    0.6627
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.6532
+{txt}       Total {c |} {res} 2443.45946        73  33.4720474   {txt}Root MSE        =   {res} 3.4071
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}         mpg{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}weight {c |}{col 14}{res}{space 2}-.0065879{col 26}{space 2} .0006371{col 37}{space 1}  -10.34{col 46}{space 3}0.000{col 54}{space 4}-.0078583{col 67}{space 3}-.0053175
+{txt}{space 5}foreign {c |}{col 14}{res}{space 2}-1.650029{col 26}{space 2} 1.075994{col 37}{space 1}   -1.53{col 46}{space 3}0.130{col 54}{space 4}  -3.7955{col 67}{space 3} .4954422
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}  41.6797{col 26}{space 2} 2.165547{col 37}{space 1}   19.25{col 46}{space 3}0.000{col 54}{space 4} 37.36172{col 67}{space 3} 45.99768
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. twoway (scatter mpg weight) (line mpghat weight, sort), by(foreign)
+{err}variable {bf}mpghat{sf} not found
+{txt}{search r(111), local:r(111);}
+
+end of do-file
+
+{search r(111), local:r(111);}
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. predict mpghat
+{txt}(option {bf:xb} assumed; fitted values)
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. twoway (scatter mpg weight) (line mpghat weight, sort), by(foreign)
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. reg mpg weight weightsq foreign // is it correct to include both weight vars?
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}        74
+{txt}{hline 13}{c +}{hline 34}   F(3, 70)        = {res}    52.25
+{txt}       Model {c |} {res} 1689.15372         3   563.05124   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res}  754.30574        70  10.7757963   {txt}R-squared       ={res}    0.6913
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.6781
+{txt}       Total {c |} {res} 2443.45946        73  33.4720474   {txt}Root MSE        =   {res} 3.2827
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}         mpg{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}weight {c |}{col 14}{res}{space 2}-.0165729{col 26}{space 2} .0039692{col 37}{space 1}   -4.18{col 46}{space 3}0.000{col 54}{space 4}-.0244892{col 67}{space 3}-.0086567
+{txt}{space 4}weightsq {c |}{col 14}{res}{space 2} 1.59e-06{col 26}{space 2} 6.25e-07{col 37}{space 1}    2.55{col 46}{space 3}0.013{col 54}{space 4} 3.45e-07{col 67}{space 3} 2.84e-06
+{txt}{space 5}foreign {c |}{col 14}{res}{space 2}  -2.2035{col 26}{space 2} 1.059246{col 37}{space 1}   -2.08{col 46}{space 3}0.041{col 54}{space 4}  -4.3161{col 67}{space 3}-.0909002
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 56.53884{col 26}{space 2} 6.197383{col 37}{space 1}    9.12{col 46}{space 3}0.000{col 54}{space 4} 44.17855{col 67}{space 3} 68.89913
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. reg mpg weightsq foreign // is it correct to include both weight vars?
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}        74
+{txt}{hline 13}{c +}{hline 34}   F(2, 71)        = {res}    56.57
+{txt}       Model {c |} {res} 1501.28673         2  750.643366   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 942.172728        71  13.2700384   {txt}R-squared       ={res}    0.6144
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.6035
+{txt}       Total {c |} {res} 2443.45946        73  33.4720474   {txt}Root MSE        =   {res} 3.6428
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}         mpg{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 4}weightsq {c |}{col 14}{res}{space 2}-9.87e-07{col 26}{space 2} 1.07e-07{col 37}{space 1}   -9.20{col 46}{space 3}0.000{col 54}{space 4}-1.20e-06{col 67}{space 3}-7.73e-07
+{txt}{space 5}foreign {c |}{col 14}{res}{space 2}-.9099653{col 26}{space 2} 1.124064{col 37}{space 1}   -0.81{col 46}{space 3}0.421{col 54}{space 4}-3.151286{col 67}{space 3} 1.331355
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 31.15103{col 26}{space 2} 1.330534{col 37}{space 1}   23.41{col 46}{space 3}0.000{col 54}{space 4} 28.49802{col 67}{space 3} 33.80404
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. drop mpghat
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. predict mpghat
+{txt}(option {bf:xb} assumed; fitted values)
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. twoway (scatter mpg weightsq) (line mpghat weightsq, sort), by(foreign)
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. twoway (scatter mpg weightsq) (line mpghat weightsq, sort), by(foreign)
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. reg mpg weight weightsq foreign // is it correct to include both weight vars?
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}        74
+{txt}{hline 13}{c +}{hline 34}   F(3, 70)        = {res}    52.25
+{txt}       Model {c |} {res} 1689.15372         3   563.05124   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res}  754.30574        70  10.7757963   {txt}R-squared       ={res}    0.6913
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.6781
+{txt}       Total {c |} {res} 2443.45946        73  33.4720474   {txt}Root MSE        =   {res} 3.2827
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}         mpg{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}weight {c |}{col 14}{res}{space 2}-.0165729{col 26}{space 2} .0039692{col 37}{space 1}   -4.18{col 46}{space 3}0.000{col 54}{space 4}-.0244892{col 67}{space 3}-.0086567
+{txt}{space 4}weightsq {c |}{col 14}{res}{space 2} 1.59e-06{col 26}{space 2} 6.25e-07{col 37}{space 1}    2.55{col 46}{space 3}0.013{col 54}{space 4} 3.45e-07{col 67}{space 3} 2.84e-06
+{txt}{space 5}foreign {c |}{col 14}{res}{space 2}  -2.2035{col 26}{space 2} 1.059246{col 37}{space 1}   -2.08{col 46}{space 3}0.041{col 54}{space 4}  -4.3161{col 67}{space 3}-.0909002
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 56.53884{col 26}{space 2} 6.197383{col 37}{space 1}    9.12{col 46}{space 3}0.000{col 54}{space 4} 44.17855{col 67}{space 3} 68.89913
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. reg mpg weight foreign // is it correct to include both weight vars?
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}        74
+{txt}{hline 13}{c +}{hline 34}   F(2, 71)        = {res}    69.75
+{txt}       Model {c |} {res}  1619.2877         2  809.643849   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 824.171761        71   11.608053   {txt}R-squared       ={res}    0.6627
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.6532
+{txt}       Total {c |} {res} 2443.45946        73  33.4720474   {txt}Root MSE        =   {res} 3.4071
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}         mpg{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}weight {c |}{col 14}{res}{space 2}-.0065879{col 26}{space 2} .0006371{col 37}{space 1}  -10.34{col 46}{space 3}0.000{col 54}{space 4}-.0078583{col 67}{space 3}-.0053175
+{txt}{space 5}foreign {c |}{col 14}{res}{space 2}-1.650029{col 26}{space 2} 1.075994{col 37}{space 1}   -1.53{col 46}{space 3}0.130{col 54}{space 4}  -3.7955{col 67}{space 3} .4954422
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}  41.6797{col 26}{space 2} 2.165547{col 37}{space 1}   19.25{col 46}{space 3}0.000{col 54}{space 4} 37.36172{col 67}{space 3} 45.99768
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. reg mpg weight weightsq foreign // is it correct to include both weight vars?
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}        74
+{txt}{hline 13}{c +}{hline 34}   F(3, 70)        = {res}    52.25
+{txt}       Model {c |} {res} 1689.15372         3   563.05124   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res}  754.30574        70  10.7757963   {txt}R-squared       ={res}    0.6913
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.6781
+{txt}       Total {c |} {res} 2443.45946        73  33.4720474   {txt}Root MSE        =   {res} 3.2827
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}         mpg{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}weight {c |}{col 14}{res}{space 2}-.0165729{col 26}{space 2} .0039692{col 37}{space 1}   -4.18{col 46}{space 3}0.000{col 54}{space 4}-.0244892{col 67}{space 3}-.0086567
+{txt}{space 4}weightsq {c |}{col 14}{res}{space 2} 1.59e-06{col 26}{space 2} 6.25e-07{col 37}{space 1}    2.55{col 46}{space 3}0.013{col 54}{space 4} 3.45e-07{col 67}{space 3} 2.84e-06
+{txt}{space 5}foreign {c |}{col 14}{res}{space 2}  -2.2035{col 26}{space 2} 1.059246{col 37}{space 1}   -2.08{col 46}{space 3}0.041{col 54}{space 4}  -4.3161{col 67}{space 3}-.0909002
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 56.53884{col 26}{space 2} 6.197383{col 37}{space 1}    9.12{col 46}{space 3}0.000{col 54}{space 4} 44.17855{col 67}{space 3} 68.89913
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. drop mpghat
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. predict mpghat
+{txt}(option {bf:xb} assumed; fitted values)
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. twoway (scatter mpg weight) (line mpghat weight, sort), by(foreign)
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. generate gp100m = 100 / mpg
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. regress gp100m weight foreign
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}        74
+{txt}{hline 13}{c +}{hline 34}   F(2, 71)        = {res}   113.97
+{txt}       Model {c |} {res} 91.1761694         2  45.5880847   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 28.4000913        71  .400001287   {txt}R-squared       ={res}    0.7625
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.7558
+{txt}       Total {c |} {res} 119.576261        73  1.63803097   {txt}Root MSE        =   {res} .63246
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}      gp100m{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}weight {c |}{col 14}{res}{space 2} .0016254{col 26}{space 2} .0001183{col 37}{space 1}   13.74{col 46}{space 3}0.000{col 54}{space 4} .0013896{col 67}{space 3} .0018612
+{txt}{space 5}foreign {c |}{col 14}{res}{space 2} .6220535{col 26}{space 2} .1997381{col 37}{space 1}    3.11{col 46}{space 3}0.003{col 54}{space 4} .2237871{col 67}{space 3}  1.02032
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.0734839{col 26}{space 2} .4019932{col 37}{space 1}   -0.18{col 46}{space 3}0.855{col 54}{space 4}-.8750354{col 67}{space 3} .7280677
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. query memory
+{txt}{hline}
+    Memory settings
+{col 7}{help maxvar:set maxvar}{col 28}2048{col 39}(not settable in this version of Stata)
+{col 7}{help matsize:set matsize}{col 28}{res}400{txt}{col 39}10-800; max. # vars in models
+{col 7}{help memory:set niceness}{col 28}{res}5{txt}{col 39}0-10
+{col 7}{help memory:set min_memory}{col 28}{res}0{txt}{col 39}0-1600g
+{col 7}{help memory:set max_memory}{col 28}{res}.{txt}{col 39}32m-1600g or .
+{col 7}{help memory:set segmentsize}{col 28}{res}32m{txt}{col 39}1m-32g
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. table foreign
+
+{txt}{hline 10}{c TT}{hline 11}
+ Car type {c |}      Freq.
+{hline 10}{c +}{hline 11}
+ Domestic {c |}         {res}52
+  {txt}Foreign {c |}         {res}22
+{txt}{hline 10}{c BT}{hline 11}
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. tab foreign
+
+   {txt}Car type {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+   Domestic {c |}{res}         52       70.27       70.27
+{txt}    Foreign {c |}{res}         22       29.73      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         74      100.00
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/jp/nr46m24x5xgcly5x3jkdzh_r0000gn/T//SD19035.000000"
+{txt}
+{com}. table foreign, contents(mean mpg mean weight mean rep78)
+
+{txt}{hline 10}{c TT}{hline 41}
+ Car type {c |}    mean(mpg)  mean(weight)   mean(rep78)
+{hline 10}{c +}{hline 41}
+ Domestic {c |}      {res}19.8269       3,317.1       3.02083
+  {txt}Foreign {c |}      {res}24.7727       2,315.9       4.28571
+{txt}{hline 10}{c BT}{hline 41}
+
+{com}. 
+{txt}end of do-file
+
+{com}. save "/Users/ml/Projects/PycharmProjects/agoda/auto.dta"
+{txt}file /Users/ml/Projects/PycharmProjects/agoda/auto.dta saved
+
+{com}. exit, clear
